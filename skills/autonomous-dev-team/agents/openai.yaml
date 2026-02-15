@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autonomous Dev Team"
+  short_description: "TeamLead-led multi-role delivery"
+  default_prompt: "Use $autonomous-dev-team to decompose my product task and execute it through TeamLead, ML-Engineer, Backend-dev, Front-dev, and QA."
