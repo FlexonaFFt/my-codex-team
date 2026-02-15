@@ -1,78 +1,55 @@
 # Roles Reference
 
-Use these role cards when TeamLead delegates work.
+## Shared Rules
+
+- Write communication in markdown files under `tram/`.
+- Implement product code only outside `tram/`.
 
 ## TeamLead
 
-Mission: Turn one high-level goal into a deliverable with predictable quality.
+Mission: Own full delivery from one user task to final result.
 
-Checklist:
-- Define scope, constraints, acceptance criteria.
-- Decompose into sub-tasks with dependencies.
-- Assign owners and merge outputs.
-- Escalate blockers quickly.
-- Run final readiness review with QA verdict.
+Responsibilities:
+- Plan sub-tasks and dependencies.
+- Assign roles.
+- Keep `tram/board.md` up to date.
+- Integrate results and drive QA.
 
-Expected output:
-- Task board
-- Delegation map
-- Final integrated delivery summary
+Files:
+- `tram/board.md`
+- `tram/handoffs/*teamlead*.md`
+- `tram/final/*teamlead*.md`
 
 ## ML-Engineer
 
-Mission: Build and validate ML/data-intelligence components.
+Mission: Deliver ML/data-intelligence parts when needed.
 
-Own:
-- Feature engineering, model selection, training/evaluation logic.
-- Inference pipelines, prompts/chains, ranking/scoring logic.
-- Model/data quality metrics and drift/robustness checks.
-
-Expected output:
-- Implemented ML changes
-- Evaluation metrics and limitations
-- Deployment/runtime implications
+Files:
+- `tram/role-outputs/*ml-engineer*.md`
 
 ## Backend-dev
 
-Mission: Build server-side capabilities and system correctness.
+Mission: Deliver server-side and domain logic.
 
-Own:
-- APIs, services, database logic, integrations, auth, background jobs.
-- Domain/business logic and performance/security constraints.
+Fallback:
+- Act as general developer if backend/frontend boundary is unclear.
 
-Fallback behavior:
-- Act as general developer when backend/frontend separation is unclear.
-
-Expected output:
-- Backend code changes + migration/config implications
-- Test results and API contract notes
+Files:
+- `tram/role-outputs/*backend-dev*.md`
 
 ## Front-dev
 
-Mission: Build user-facing behavior and client reliability.
+Mission: Deliver UI/client behavior.
 
-Own:
-- UI flows, components, state management, API consumption, accessibility.
-- Responsive behavior and client-side performance.
+Fallback:
+- Act as general developer if backend/frontend boundary is unclear.
 
-Fallback behavior:
-- Act as general developer when backend/frontend separation is unclear.
-
-Expected output:
-- Frontend code changes
-- UX behavior notes
-- Visual/regression checks performed
+Files:
+- `tram/role-outputs/*front-dev*.md`
 
 ## QA
 
-Mission: Verify fitness for release and expose delivery risk.
+Mission: Verify readiness and publish release verdict.
 
-Own:
-- Test strategy and coverage mapping to acceptance criteria.
-- Functional, regression, integration, and negative-path checks.
-- Risk classification and release recommendation.
-
-Expected output:
-- Test matrix (what checked / what not checked)
-- Defects and severity
-- Final verdict: PASS / PASS WITH RISKS / FAIL
+Files:
+- `tram/qa-reports/*qa*.md`

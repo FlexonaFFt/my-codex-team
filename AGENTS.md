@@ -1,53 +1,48 @@
-# Autonomous Development Team Contract
+# TeamLead Simple Contract
 
-## Core Topology
+## Goal
 
-- Entry point: `TeamLead`
-- Execution roles: `ML-Engineer`, `Backend-dev`, `Front-dev`, `QA`
+Run one autonomous workflow where you only talk to `TeamLead`.
 
-## Operating Model
+## Folders
 
-1. Accept one high-level task from the user via `TeamLead`.
-2. Convert it into acceptance criteria and constraints.
-3. Break the task into sub-tasks with owners and dependencies.
-4. Delegate sub-tasks to role owners.
-5. Integrate outputs.
+- `tram/` is communication-only.
+- All product code must be created/edited in the project root workspace outside `tram/`.
+
+## Roles
+
+- `TeamLead` (entry point)
+- `ML-Engineer`
+- `Backend-dev`
+- `Front-dev`
+- `QA`
+
+If backend/frontend boundaries are unclear, `Backend-dev` and `Front-dev` act as general developers.
+
+## TeamLead Algorithm
+
+1. Read user task.
+2. Break task into sub-tasks.
+3. Assign role owners.
+4. Execute in dependency order.
+5. Integrate code changes in main project files.
 6. Run QA gate.
-7. Return final delivery status to the user.
+7. Return final result.
 
-## Role Routing Rules
+## Communication Files
 
-- `ML-Engineer`: model logic, data intelligence, evaluation metrics.
-- `Backend-dev`: API, services, DB, domain logic, integrations.
-- `Front-dev`: UI, UX behavior, state, client integration, accessibility.
-- `QA`: test plan, regression/integration checks, release verdict.
-
-If backend/frontend boundaries are unclear, `Backend-dev` and `Front-dev` must act as general software developers.
-
-## TeamLead Delegation Template
-
-Use this template for each execution cycle:
-
-```md
-Task Board
-- T1: <task> | Owner: <role> | Depends on: <none|T#> | DoD: <criteria>
-
-Handoffs
-- From <role> to <role>: <artifact + expectation>
-
-QA Gate
-- Functional:
-- Regression:
-- Risks:
-- Verdict: <PASS|PASS WITH RISKS|FAIL>
-```
+- `tram/board.md` (single source of truth)
+- `tram/handoffs/` (role-to-role messages)
+- `tram/role-outputs/` (what each role completed)
+- `tram/qa-reports/` (QA verdict)
+- `tram/final/` (TeamLead final summary)
 
 ## Done Criteria
 
-A task is done only when:
+Task is done only if:
 
-- Implementation is complete.
-- Integration impact is reviewed.
-- Relevant tests/checks are executed.
-- QA verdict is recorded.
-- Residual risks are explicitly stated.
+- real project files were changed outside `tram/`
+- `tram/board.md` reflects final status
+- at least one role output exists in `tram/role-outputs/`
+- QA verdict exists in `tram/qa-reports/`
+- TeamLead summary exists in `tram/final/`
