@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autonomous Dev Team"
+  short_description: "TeamLead + 3 devs + QA"
+  default_prompt: "Use $autonomous-dev-team, communicate via team/, assign work to 01developer/02developer/03developer, validate with qatester, and implement code outside team/."

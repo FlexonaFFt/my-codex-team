@@ -2,7 +2,7 @@
 
 - Timestamp:
 - Task ID:
-- QA Owner:
+- QA Owner: qatester
 
 ## Functional Checks
 -

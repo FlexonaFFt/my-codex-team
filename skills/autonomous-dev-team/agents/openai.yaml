@@ -1,4 +1,0 @@
-interface:
-  display_name: "Autonomous Dev Team"
-  short_description: "One-task TeamLead autopilot"
-  default_prompt: "Use $autonomous-dev-team, communicate via tram/, and execute my task autonomously while writing product code outside tram/."
